@@ -9,7 +9,7 @@ const papier_div = document.getElementById("papier");
 const schaar_div = document.getElementById("schaar");
 
 function getComputerChoice() {
-    const choices = ['r', 'p', 's'];
+    const choices = ['steen', 'papier', 'schaar'];
     const randomNumber = Math.floor(Math.random() * 3);
     return choices[randomNumber];
 }
@@ -17,10 +17,27 @@ function getComputerChoice() {
 
 function game(userChoice) {
     const computerChoice = getComputerChoice();
-    console.log("De keuze van jou is: " + userChoice);
-    console.log("De keuze van de computer is: " + computerChoice);
-}
 
+    switch(userChoice + computerChoice) {
+        case "steenschaar":
+        case "papiersteen":
+        case "schaarpapier":
+            console.log("Je hebt gewonnen!");
+            break;
+
+        case "schaarsteen":
+        case "steenpapier":
+        case "papierschaar":
+            console.log("Je hebt helaas verloren!");
+            break;
+
+        case "steensteen":
+        case "papierpapier":
+        case "schaarschaar":
+            console.log("Je hebt gelijkgespeeld met de computer!");
+            break;
+    }
+}
 
 function main() {
     steen_div.addEventListener('click', function() {
@@ -35,6 +52,7 @@ function main() {
         game("schaar");
     });
 }
+main();
 
 
 
