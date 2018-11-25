@@ -4,9 +4,9 @@ const userScore_span = document.getElementById("user-score");
 const computerScore_span = document.getElementById("computer-score");
 const scoreBoard_div = document.querySelector(".score-board");
 const result_div = document.querySelector(".result");
-const rock_div = document.getElementById("r");
-const paper_div = document.getElementById("p");
-const scissors_div = document.getElementById("s");
+const steen_div = document.getElementById("steen");
+const papier_div = document.getElementById("papier");
+const schaar_div = document.getElementById("schaar");
 
 function getComputerChoice() {
     const choices = ['r', 'p', 's'];
@@ -21,20 +21,20 @@ function game(userChoice) {
     console.log("De keuze van de computer is: " + computerChoice);
 }
 
-game("c");
+game(main());
 function main() {
-    rock_div.addEventListener('click', function() {
-        game("r");
+    steen_div.addEventListener('click', function() {
+        game("steen");
     });
 
-    paper_div.addEventListener('click', function() {
-        game("p");
+    papier_div.addEventListener('click', function() {
+        game("papier");
     });
 
-    scissors_div.addEventListener('click', function() {
-        game("s");
+    schaar_div.addEventListener('click', function() {
+        game("schaar");
     });
 }
 
-main();
+
 
