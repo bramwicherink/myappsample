@@ -1,9 +1,9 @@
-const userScore = 0;
-const computerScore = 0;
+let userScore = 0;
+let computerScore = 0;
 const userScore_span = document.getElementById("user-score");
 const computerScore_span = document.getElementById("computer-score");
 const scoreBoard_div = document.querySelector(".score-board");
-const result_div = document.querySelector(".result");
+const result_div = document.querySelector(".result > p");
 const steen_div = document.getElementById("steen");
 const papier_div = document.getElementById("papier");
 const schaar_div = document.getElementById("schaar");
@@ -14,6 +14,35 @@ function getComputerChoice() {
     return choices[randomNumber];
 }
 
+function gewonnen(userChoice, computerChoice) {
+    userScore++;
+    userScore_span.innerHTML = userScore;
+    computerScore_span.innerHTML = computerScore;
+    const smallUserWord = "user".fontsize(3).sub();
+    const smallCompWord = "comp".fontsize(3).sub();
+    result_div.innerHTML = `${userChoice} ${smallUserWord}  verslaat   ${computerChoice} ${smallCompWord}. Je hebt gewonnen!`;
+
+
+}
+
+function verloren() {
+    computerScore++;
+    userScore_span.innerHTML = userScore;
+    computerScore_span.innerHTML = computerScore;
+    const smallUserWord = "user".fontsize(3).sub();
+    const smallCompWord = "comp".fontsize(3).sub();
+    result_div.innerHTML = `${userChoice} ${smallUserWord}  verliest tegen   ${computerChoice} ${smallCompWord}. Je hebt verloren!`;
+}
+
+function gelijkspel() {
+    userScore++;
+    userScore_span.innerHTML = userScore;
+    computerScore_span.innerHTML = computerScore;
+    const smallUserWord = "user".fontsize(3).sub();
+    const smallCompWord = "comp".fontsize(3).sub();
+    result_div.innerHTML = `${userChoice} ${smallUserWord}  verslaat   ${computerChoice} ${smallCompWord}. Je hebt gewonnen!`;
+}
+
 
 function game(userChoice) {
     const computerChoice = getComputerChoice();
@@ -22,19 +51,19 @@ function game(userChoice) {
         case "steenschaar":
         case "papiersteen":
         case "schaarpapier":
-            console.log("Je hebt gewonnen!");
+            gewonnen(userChoice, computerChoice);
             break;
 
         case "schaarsteen":
         case "steenpapier":
         case "papierschaar":
-            console.log("Je hebt helaas verloren!");
+            verloren(userChoice, computerChoice);
             break;
 
         case "steensteen":
         case "papierpapier":
         case "schaarschaar":
-            console.log("Je hebt gelijkgespeeld met de computer!");
+            gelijkspel(userChoice, computerChoice);
             break;
     }
 }
