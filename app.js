@@ -21,7 +21,7 @@ function game(userChoice) {
     console.log("De keuze van de computer is: " + computerChoice);
 }
 
-game(main());
+
 function main() {
     steen_div.addEventListener('click', function() {
         game("steen");
