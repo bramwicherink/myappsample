@@ -14,34 +14,7 @@ function getComputerChoice() {
     return choices[randomNumber];
 }
 
-function gewonnen(userChoice, computerChoice) {
-    userScore++;
-    userScore_span.innerHTML = userScore;
-    computerScore_span.innerHTML = computerScore;
-    const smallUserWord = "user".fontsize(3).sub();
-    const smallCompWord = "comp".fontsize(3).sub();
-    result_div.innerHTML = `${userChoice} ${smallUserWord}  verslaat   ${computerChoice} ${smallCompWord}. Je hebt gewonnen!`;
 
-
-}
-
-function verloren() {
-    computerScore++;
-    userScore_span.innerHTML = userScore;
-    computerScore_span.innerHTML = computerScore;
-    const smallUserWord = "user".fontsize(3).sub();
-    const smallCompWord = "comp".fontsize(3).sub();
-    result_div.innerHTML = `${userChoice} ${smallUserWord}  verliest tegen   ${computerChoice} ${smallCompWord}. Je hebt verloren!`;
-}
-
-function gelijkspel() {
-    userScore++;
-    userScore_span.innerHTML = userScore;
-    computerScore_span.innerHTML = computerScore;
-    const smallUserWord = "user".fontsize(3).sub();
-    const smallCompWord = "comp".fontsize(3).sub();
-    result_div.innerHTML = `${userChoice} ${smallUserWord}  verslaat   ${computerChoice} ${smallCompWord}. Je hebt gewonnen!`;
-}
 
 
 function game(userChoice) {
@@ -66,6 +39,34 @@ function game(userChoice) {
             gelijkspel(userChoice, computerChoice);
             break;
     }
+}
+
+function gewonnen(userChoice, computerChoice) {
+    userScore++;
+    userScore_span.innerHTML = userScore;
+    computerScore_span.innerHTML = computerScore;
+    const smallUserWord = "user".fontsize(3).sub();
+    const smallCompWord = "comp".fontsize(3).sub();
+    result_div.innerHTML = `${userChoice} ${smallUserWord}  verslaat   ${computerChoice} ${smallCompWord}. Je hebt gewonnen!`;
+
+
+}
+
+function verloren(userChoice, computerChoice) {
+    computerScore++;
+    userScore_span.innerHTML = userScore;
+    computerScore_span.innerHTML = computerScore;
+    const smallUserWord = "user".fontsize(3).sub();
+    const smallCompWord = "comp".fontsize(3).sub();
+    result_div.innerHTML = `${userChoice} ${smallUserWord}  verliest tegen   ${computerChoice} ${smallCompWord}. Je hebt verloren!`;
+}
+
+function gelijkspel(userChoice, computerChoice) {
+    userScore_span.innerHTML = userScore;
+    computerScore_span.innerHTML = computerScore;
+    const smallUserWord = "user".fontsize(3).sub();
+    const smallCompWord = "comp".fontsize(3).sub();
+    result_div.innerHTML = `${userChoice} ${smallUserWord}  speelt gelijk tegen   ${computerChoice} ${smallCompWord}. Gelijkspel!`;
 }
 
 function main() {
