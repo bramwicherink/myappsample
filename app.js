@@ -49,8 +49,13 @@ function gewonnen(userChoice, computerChoice) {
     const smallCompWord = "comp".fontsize(3).sub();
     result_div.innerHTML = `${userChoice} ${smallUserWord}  verslaat   ${computerChoice} ${smallCompWord}. Je hebt gewonnen!`;
 
+    document.getElementById(userChoice).classList.add('green-glow');
 
 }
+
+setTimeout(function () {
+    document.getElementById(userChoice).classList.remove('green-glow')
+},3000);
 
 function verloren(userChoice, computerChoice) {
     computerScore++;
