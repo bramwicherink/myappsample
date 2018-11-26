@@ -53,7 +53,7 @@ function gewonnen(userChoice, computerChoice) {
 
 }
 
-setTimeout(function () {
+setTimeout(function (userChoice) {
     document.getElementById(userChoice).classList.remove('green-glow')
 },3000);
 
